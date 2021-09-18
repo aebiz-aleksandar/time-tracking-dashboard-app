@@ -1,0 +1,325 @@
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+    :root {
+        --blue: hsl(246, 80%, 60%);
+        --white: hsl(356, 100%, 100%);
+        --lightOrange: hsl(15, 100%, 70%); /*work*/
+        --softBlue: hsl(195, 74%, 62%); /*play*/
+        --lightRed: hsl(348, 100%, 68%); /*study*/
+        --limeGreen: hsl(145, 58%, 55%); /*exercise*/
+        --violet: hsl(264, 64%, 52%); /*social*/
+        --softOrange: hsl(43, 84%, 65%); /*self care*/
+        --veryDarkBlue: hsl(226, 43%, 10%);
+        --lightDarkBlue: hsl(235, 45%, 28%);
+        --darkBlue: hsl(235, 46%, 20%);
+        --desaturatedBlue: hsl(235, 45%, 61%);
+        --paleBlue: hsl(236, 100%, 87%);
+    }
+
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        font-size: 18px;
+        font-family: 'Rubik', sans-serif;
+        background: var(--veryDarkBlue);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .list-reset {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .fade-in {
+        animation: fadeIn 0.8s ease-in-out;
+    }
+
+    .dashboard {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        width: 85%;
+        padding: 80px 0 50px;
+    }
+
+    .dashboard .dashboard-manage {
+        background: var(--darkBlue);
+        border-radius: 15px;
+    }
+
+    .dashboard .dashboard-manage .manage-profile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 15px;
+        padding: 30px;
+        background: var(--blue);
+        border-radius: 15px;
+    }
+
+    .dashboard .dashboard-manage .manage-profile .profile-image {
+        line-height: 0;
+    }
+
+    .dashboard .dashboard-manage .manage-profile .profile-image img {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        border: 3px solid var(--white);
+        overflow: hidden;
+    }
+
+    .dashboard .dashboard-manage .manage-profile .profile-info span {
+        display: inline-block;
+        font-size: 15px;
+        color: var(--paleBlue);
+        margin-bottom: 12px;
+    }
+
+    .dashboard .dashboard-manage .manage-profile .profile-info .profile-name {
+        color: var(--white);
+        font-size: 20px;
+    }
+
+    .dashboard .dashboard-manage .manage-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+
+    .dashboard .dashboard-manage .manage-menu .menu-list .menu-list-item {
+        display: inline-block;
+        color: var(--desaturatedBlue);
+        cursor: pointer;
+    }
+
+    .dashboard .dashboard-manage .manage-menu .menu-list .menu-list-item.active {
+        color: var(--white);
+    }
+
+    .dashboard .dashboard-manage .manage-menu .menu-list .menu-list-item:hover {
+        color: var(--white);
+    }
+
+    .dashboard .dashboard-manage .manage-menu .menu-list li:not(:last-child) {
+        margin-right: 40px;
+    }
+
+    .dashboard .dashboard-reports {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .dashboard .dashboard-reports .report {
+        position: relative;
+        padding-top: 40px;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .dashboard .dashboard-reports .report.report-work {
+        background: var(--lightOrange);
+    }
+    .dashboard .dashboard-reports .report.report-play {
+        background: var(--softBlue);
+    }
+    .dashboard .dashboard-reports .report.report-study {
+        background: var(--lightRed);
+    }
+    .dashboard .dashboard-reports .report.report-exercise {
+        background: var(--limeGreen);
+    }
+    .dashboard .dashboard-reports .report.report-social {
+        background: var(--violet);
+    }
+    .dashboard .dashboard-reports .report.report-self-care {
+        background: var(--softOrange);
+    }
+
+    .dashboard .dashboard-reports .report .report-icon {
+        position: absolute;
+        top: -15px;
+        right: 30px;
+        z-index: 1;
+    }
+
+    .dashboard .dashboard-reports .report .report-content {
+        position: relative;
+        padding: 25px 20px;
+        background: var(--darkBlue);
+        border-radius: 15px;
+        z-index: 2;
+    }
+
+    .dashboard .dashboard-reports .report:hover .report-content {
+        background: var(--lightDarkBlue);
+        cursor: pointer;
+    }
+
+    .dashboard .dashboard-reports .report .report-content .field {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .dashboard .dashboard-reports .report .report-content .field h5 {
+        color: var(--white);
+        font-size: 18px;
+    }
+
+    .dashboard .dashboard-reports .report .report-content .field img {
+        cursor: pointer;
+    }
+
+    .dashboard .dashboard-reports .report .report-content .time {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .dashboard .dashboard-reports .report .report-content .time .total-time {
+        font-size: 25px;
+        color: var(--white);
+    }
+
+    .dashboard .dashboard-reports .report .report-content .time .last-time {
+        font-size: 15px;
+        color: var(--paleBlue);
+    }
+
+    @media (min-width: 768px) {
+        .dashboard .dashboard-manage .manage-profile .profile-image img {
+            width: 85px;
+            height: 85px;
+            border: 5px solid var(--white);
+        }
+
+        .dashboard .dashboard-manage .manage-profile .profile-info span {
+            font-size: 20px;
+        }
+    
+        .dashboard .dashboard-manage .manage-profile .profile-info .profile-name {
+            font-size: 25px;
+        }
+
+        .dashboard .dashboard-manage .manage-menu .menu-list .menu-list-item {
+            font-size: 20px;
+        }
+
+        .dashboard .dashboard-manage .manage-menu .menu-list li:not(:last-child) {
+            margin-right: 50px;
+        }
+
+        .dashboard .dashboard-reports .report {
+            padding-top: 55px;
+        }
+
+        .dashboard .dashboard-reports .report .report-content .field h5 {
+            font-size: 25px;
+        }
+
+        .dashboard .dashboard-reports .report .report-content .time .total-time {
+            font-size: 30px;
+        }
+    
+        .dashboard .dashboard-reports .report .report-content .time .last-time {
+            font-size: 20px;
+        }
+    }
+
+
+    @media (min-width: 1024px) {
+        body {
+            min-height: 100vh;
+        }
+
+        .dashboard {
+            padding: 0;
+            width: 100%;
+            max-width: 1000px;
+            flex-direction: row;
+            gap: 25px;
+        }
+
+        .dashboard .dashboard-manage {
+            width: 25%;
+        }
+
+        .dashboard .dashboard-manage .manage-profile {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 30px 30px 75px 30px;
+        }
+
+        .dashboard .dashboard-manage .manage-profile .profile-info .profile-name {
+            font-size: 35px;
+        }
+
+        .dashboard .dashboard-manage .manage-menu {
+            justify-content: flex-start;
+            padding: 35px 20px;
+        }
+
+        .dashboard .dashboard-manage .manage-menu .menu-list .menu-list-item {
+            display: block;
+        }
+
+        .dashboard .dashboard-manage .manage-menu .menu-list li:not(:last-child) {
+            margin-right: 0;
+            margin-bottom: 15px;
+        }
+
+        .dashboard .dashboard-reports {
+            width: 75%;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .dashboard .dashboard-reports .report {
+            padding-top: 45px;
+        }
+
+        .dashboard .dashboard-reports .report .report-content .field {
+            margin-bottom: 40px;
+        }
+
+        .dashboard .dashboard-reports .report .report-content .field h5 {
+            font-size: 18px;
+        }
+
+        .dashboard .dashboard-reports .report .report-content .time {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .dashboard .dashboard-reports .report .report-content .time .total-time {
+            font-size: 45px;
+            font-weight: 200;
+        }
+        .dashboard .dashboard-reports .report .report-content .time .last-time {
+            font-size: 15px;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }

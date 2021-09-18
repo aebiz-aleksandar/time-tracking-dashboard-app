@@ -1,0 +1,58 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <!-- style.css -->
+    <link rel="stylesheet" href="style.css">
+    <title>Frontend Mentor | Time tracking dashboard</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution { font-size: 11px; text-align: center; }
+      .attribution a { color: hsl(228, 45%, 44%); }
+    </style>
+  </head>
+  <body>
+
+    <!-- Dashboard -->
+    <div class="dashboard">
+      <!-- Dashboard Manage -->
+      <div class="dashboard-manage">
+        <!-- Manage Profile -->
+        <div class="manage-profile">
+          <div class="profile-image">
+            <img src="images/image-jeremy.png" alt="profile-image">
+          </div>
+          <div class="profile-info">
+            <span>Report for</span>
+            <div class="profile-name">Jeremy Robson</div>
+          </div>
+        </div>
+        <!-- Manage Profile END -->
+        <!-- Manage Menu -->
+        <div class="manage-menu">
+          <ul id="menuList" class="menu-list list-reset">
+            <li class="menu-list-item">Daily</li>
+            <li class="menu-list-item active">Weekly</li>
+            <li class="menu-list-item">Monthly</li>
+          </ul>
+        </div>
+        <!-- Manage Menu END -->
+      </div>
+      <!-- Dashboard Manage END -->
+
+      <!-- Dashboard Reports -->
+      <div id="dashboardReports" class="dashboard-reports">
+        
+      </div>
+      <!-- Dashboard Reports END -->
+    </div>
+    <!-- Dashboard END -->
+
+    <!-- main.js -->
+    <script src="main.js"></script>
+  </body>
+  </html>
